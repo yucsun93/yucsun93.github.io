@@ -28,9 +28,8 @@ sup { top: -.5em; } sub { bottom: -.2em; }
 .site-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 30px 27px; border-bottom: 1px solid var(--line); }
 .wordmark { color: var(--ink); text-decoration: none; font: 1.7rem/1.25 var(--serif); white-space: nowrap; }
 .wordmark:hover { text-decoration: none; color: var(--deep-blue); }
-.wordmark span { display: block; font: .875rem/1.6 var(--sans); color: var(--muted); margin-top: .4rem; }
-.chinese-name { font: 400 .42em/1.5 var(--sans); letter-spacing: 0; white-space: nowrap; }
-.wordmark .chinese-name { font-size: .65em; }
+.wordmark .wordmark-subtitle { display: block; font: .875rem/1.6 var(--sans); color: var(--muted); margin-top: .4rem; }
+.chinese-name { font: inherit; letter-spacing: inherit; white-space: nowrap; }
 nav { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; }
 .site-header nav a { color: var(--muted); text-decoration: none; font-size: .95rem; padding-block: .55rem; border-bottom: 2px solid transparent; white-space: nowrap; }
 .site-header nav a:hover, .site-header nav a[aria-current='page'] { color: var(--deep-blue); border-bottom-color: var(--blue); }
@@ -39,7 +38,8 @@ main { padding-block: 57px 76px; }
 .eyebrow { margin: 0 0 1rem; font-size: .875rem; font-weight: 600; letter-spacing: .11em; text-transform: uppercase; color: var(--blue); }
 .role { font-size: 1.22rem; color: var(--muted); margin-block: .7rem 2rem; }
 .home-layout { display: grid; grid-template-columns: minmax(0, 1fr) 250px; grid-template-rows: auto 1fr; gap: 2rem 80px; }
-.home-main { min-width: 0; grid-column: 1; grid-row: 1 / span 2; }
+.home-main { min-width: 0; grid-column: 1; grid-row: 1 / span 2; container-type: inline-size; }
+#about-title { font-size: clamp(1.25rem, 9cqi, 3.4rem); white-space: nowrap; }
 .profile-photo { grid-column: 2; grid-row: 1; margin: 0; }
 .profile-photo img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 3px; }
 .intro p:not(.eyebrow):not(.role) { font-size: 1.05rem; line-height: 1.8; }
@@ -110,8 +110,7 @@ main { padding-block: 57px 76px; }
 @media (max-width: 720px) {
   .wrap { width: calc(100% - 40px); }
   .site-header { padding-block: 23px 19px; }
-  .wordmark { font-size: 1.55rem; white-space: normal; }
-  .wordmark span { font-size: .875rem; }
+  .wordmark { font-size: clamp(1rem, 7vw, 1.55rem); }
   nav { gap: .3rem 1.25rem; }
   .site-header nav a { padding-block: .45rem; font-size: .9rem; }
   main { padding-block: 35px 48px; }
